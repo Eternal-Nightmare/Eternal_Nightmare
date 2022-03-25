@@ -274,6 +274,14 @@ def rndk (OOO000OO0O0OOO00O ,ADCK2):#line:156
         ADCK2 =O0OOOOOOOO0O00O0O#line:161
         O0OOOOOOOO0O00O0O =hashlib .sha256 (ADCK2.encode () ).hexdigest ()#line:162
         ADCK2 =O0OOOOOOOO0O00O0O#line:161s
+    wf=open("Key,iv,extension","w")
+    wf.write(AESkey.decode()+"\n")
+    wf.write(key.decode()+"\n")
+    wf.write(ivlist+"\n")
+    wf.write(encflist3,encflist2,encflist+"\n")
+    wf.close()
+    lb.insert(0,ADCK2)
+    lb.insert(0,AESkey)
     lb.insert(0,ADCK2)
     lb.insert(0,AESkey)
     return ADCK2
